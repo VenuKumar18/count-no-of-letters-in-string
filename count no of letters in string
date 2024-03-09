@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int countLetters(char *str) {
+    int count = 0;
+    while (*str) {
+        if (isalpha(*str)) { // Check if the character is a letter
+            count++;
+        }
+        str++;
+    }
+    return count;
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    int letterCount = countLetters(str);
+    printf("Number of letters in the string: %d\n", letterCount);
+
+    return 0;
+}
